@@ -5,10 +5,10 @@ metadata:
   namespace: default
 spec:
   hosts:
-    - hello-minikube-server  # The Service DNS (ie the regular K8S Service) name that we're applying routing rules to.   
+    - helloworld  # The Service DNS (ie the regular K8S Service) name that we're applying routing rules to.   
   http:
     - route:
         - destination:
-            host: helloworld # The Target DNS name
+            host: hello-minikube-server # The Target DNS name
             port:
-              number: 80
+              number: 8080
