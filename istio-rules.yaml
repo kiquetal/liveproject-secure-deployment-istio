@@ -1,0 +1,14 @@
+kind: VirtualService
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: hello-world-vs  # "just" a name for this virtualservice
+  namespace: default
+spec:
+  hosts:
+    - helloworld  # The Service DNS (ie the regular K8S Service) name that we're applying routing rules to.
+  http:
+    - route:
+        - destination:
+            host: hello-minikube-server # The Target DNS name
+            port:
+              number: 8080  
