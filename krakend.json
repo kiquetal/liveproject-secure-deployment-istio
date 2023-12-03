@@ -1,0 +1,21 @@
+{
+  "version": 3,
+  "timeout": "3000ms",
+  "cache_ttl": "300s",
+  "name": "API - Gateway",
+  "endpoints": [
+    {
+      "endpoint": "/hello-gateway",
+      "output_encoding": "string",
+      "method": "GET",
+      "backend": [
+        {
+          "encoding": "string",
+          "method": "GET",
+          "host": ["http://hello-minikube-server:8080"],
+          "disable_host_sanitize": true
+        }
+      ]
+    }
+  ]
+}
