@@ -11,13 +11,11 @@ spec:
   http:
   - match:
     - uri:
+        prefix: /static/*  
+    - uri:
+        prefix: /static/
+    - uri:
         exact: /
-    - uri:
-        exact: /callback
-    - uri:
-        prefix: /static
-    - uri:
-        regex: '^.*\.(ico|png|jpg|css)$'
     route:
     - destination:
         host: frontend
